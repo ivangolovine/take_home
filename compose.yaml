@@ -1,0 +1,33 @@
+services:
+  frontend:
+    #image: rubife
+    build:
+      context: ./frontend
+      dockerfile: Dockerfile
+    ports: 
+      - "127.0.0.1:8080:3000"
+    # network_mode: "host"
+    develop:
+      watch: 
+        # sync static content
+        - path: ./frontend/src
+          action: sync
+          target: /var/www
+          ignore:
+            - node_modules/
+
+  backend:
+    #image: example/backend
+    build:
+      context: ./backend
+      dockerfile: Dockerfile
+    ports: 
+      - "127.0.0.1:3000:3000"
+    # network_mode: "host"
+    develop:
+      watch: 
+        # rebuild image and recreate service
+        - path: ./backend/src
+          ignore:
+            - target/
+          action: rebuild

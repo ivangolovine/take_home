@@ -96,6 +96,17 @@ dependencies = [
 ]
 
 [[package]]
+name = "backend"
+version = "0.1.0"
+dependencies = [
+ "anyhow",
+ "axum",
+ "serde",
+ "thiserror",
+ "tokio",
+]
+
+[[package]]
 name = "backtrace"
 version = "0.3.73"
 source = "registry+https://github.com/rust-lang/crates.io-index"
@@ -442,17 +453,6 @@ source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "2a908a6e00f1fdd0dfd9c0eb08ce85126f6d8bbda50017e74bc4a4b7d4a926a4"
 dependencies = [
  "bitflags",
-]
-
-[[package]]
-name = "rubi_be"
-version = "0.1.0"
-dependencies = [
- "anyhow",
- "axum",
- "serde",
- "thiserror",
- "tokio",
 ]
 
 [[package]]
