@@ -10,9 +10,9 @@ services:
     develop:
       watch: 
         # sync static content
-        - path: ./frontend/src
+        - path: ./frontend
           action: sync
-          target: /var/www
+          target: /app
           ignore:
             - node_modules/
 

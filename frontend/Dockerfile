@@ -1,7 +1,14 @@
 FROM node
 
-ADD . /src
-WORKDIR /src
-RUN yarn install
+RUN useradd -ms /bin/sh -u 1001 app
+USER app
 
-CMD npm run-script dev
+WORKDIR /app
+
+COPY package.json yarn.lock ./
+
+RUN yarn
+
+COPY --chown=app:app . /app
+
+CMD npm run dev
