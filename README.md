@@ -70,7 +70,7 @@ This exercise is to understand your foresight and ability to think from a produc
 
 We estimate that the above sections will take about 10 hours total. To be respectful of your time, complete what you are able to in that time allowance and provide us a brief summary of improvements and extensions that you would like to make given more time.
 
-Please complete the submission within 10 days of receiving this email.
+Please complete the submission within 5 business days of receiving this email.
 
 ## Sample Project
 
