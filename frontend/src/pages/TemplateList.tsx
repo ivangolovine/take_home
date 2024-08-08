@@ -26,6 +26,9 @@ const TemplateList: React.FC = () => {
         </Typography>
         <Paper elevation={3} style={{ padding: "16px" }}>
           Your code here.
+          <div>
+            <p>Test</p>
+          </div>
         </Paper>
       </Box>
     </Container>

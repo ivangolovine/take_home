@@ -5,7 +5,7 @@ USER app
 
 WORKDIR /app
 
-COPY package.json yarn.lock ./
+COPY --chown=app:app package.json yarn.lock ./
 
 RUN yarn
 
