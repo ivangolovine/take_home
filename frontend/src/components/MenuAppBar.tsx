@@ -11,6 +11,7 @@ import {
   Box
 } from "@mui/material";
 import MenuIcon from "@mui/icons-material/Menu";
+import './MenuAppBar.css';
 import { useNavigate } from "react-router-dom";
 
 const MenuAppBar: React.FC = () => {

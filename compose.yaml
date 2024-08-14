@@ -24,10 +24,15 @@ services:
     ports: 
       - "127.0.0.1:3000:3000"
     # network_mode: "host"
+    volumes:
+      # Map the backend source code to the container
+      - ./backend:/app
+      # Map the tempDatabase directory to persist data
+      - ./backend/tempDatabase:/tempDatabase
     develop:
       watch: 
         # rebuild image and recreate service
-        - path: ./backend/src
+        - path: ./backend
           ignore:
-            - target/
+            - venv/
           action: rebuild

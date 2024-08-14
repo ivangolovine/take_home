@@ -1,0 +1,129 @@
+.Email-Information-Outer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 500px;
+    height: 750px;
+    max-width: 1440px; 
+    margin: 0 auto; 
+    padding: 20px;
+    background-color: #535bf2;
+    letter-spacing: 0.5px;
+    font-family: "Roboto", sans-serif;
+}
+
+.CC-Email-Outer {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    height: 50px;
+    width: 450px;
+    margin: 10px 0 0 0 ;
+    padding: 10px;
+}
+
+.Email-To-Outer {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    height: 50px;
+    width: 450px;
+    margin: 10px 0 0 0 ;
+    padding: 10px;
+}
+
+.CC-Email-Text-Container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 80px;
+    height: 40px;
+    border-radius: 10%;
+    border-color: #DCDCDC;
+    border-width: 2px;
+    background-color: rgb(255, 255, 255);
+    margin: 0 10px 0 0;
+}
+
+.CC-Email-Text {
+    color: black;
+}
+
+.CC-Emails {
+    letter-spacing: 0.5px;
+    display: flex;
+    outline: none;
+    width: 100%;
+    height: 20px;
+}
+
+
+/* Sending Button */
+.Email-Container-Buttons {
+    display: flex;
+    width: 450px;
+}
+
+
+.Send-Button-Email {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 15px;
+    width: 15px;
+    padding: 8px;
+    border-radius: 5px;
+    margin-right: 10px;
+    background-color: rgb(37, 41, 41);
+}
+
+.Send-Button-Email:hover {
+    cursor: pointer;
+}
+
+.Clear-Button-Email {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 15px;
+    width: 15px;
+    padding: 8px;
+    border-radius: 5px;
+    background-color: rgb(37, 41, 41);
+}
+
+.Clear-Button-Email:hover {
+    cursor: pointer;
+}
+
+/* Text Area */
+.Email-Text-Area-Container {
+    display: flex;
+    flex-direction: column;
+    padding: 10px;
+    width: 450px;
+}
+
+.Email-Text-Subject {
+    letter-spacing: 0.5px;
+    height: 20px;
+    width: 100%;
+    margin-bottom: 5px;
+    font-size: 14px;
+    outline: none;
+}
+
+.Email-Text-Area {
+    letter-spacing: 0.5px;
+    min-height: 500px;
+    width: 100%;
+    padding-top: 5px;
+    resize: none;
+    outline: none;
+}
+

@@ -6,10 +6,18 @@ import ReadmePage from "./pages/ReadMePage";
 import TemplateList from "./pages/TemplateList";
 
 const App: React.FC = () => {
+
   return (
     <Router>
       <MenuAppBar />
-      <Box mt={8}>
+      <Box 
+       sx={{
+        width: '100%',        
+        maxWidth: '1280px',    
+        margin: '0 auto',     
+        height: '100%',       
+      }}
+      >
         {" "}
         <Routes>
           <Route path="/" element={<ReadmePage />} />

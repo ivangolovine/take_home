@@ -1,114 +1,104 @@
-# Rubicon Email Templates Management
+## Overview
 
-Welcome to the Rubicon Email Templates Management take-home project! As a Full-Stack Developer on the Rubicon team, your task is to develop a new customer feature from end to end for our online non-emergency reporting system. This system accepts crime reports from citizens, and officers then process the reports and respond back to the citizen with instructions for next steps (if any).
+### Identifying Gaps
+- The way the template page is currently set up is not very customizable to user-specific needs, especially when working with different police agencies.
+- A user will struggle to find specific templates when the list grows too large.
+- There is no proper access control implemented, which would prevent someone from accessing the tools they should not have access to.
 
-## Project Overview
 
-Officers from the Gotham Police Service have asked for a way to manage and use email templates when responding to online report submissions. They said that current responses “are often very similar each time and can be lengthy.” They want a way to streamline the response process, saving time and ensuring consistency.
+### Solutions and Implementation
 
-## Technical Implementation Section
+#### 1
+#### Solution
+- Add a setting page that gives the user the ability to customize the theme, add a greater variety of sections, and pick the location of the template and email section not being restricted to a dedicated page and accessible across the system if that option is selected. 
 
-Implement the following functionality to support this feature:
+#### Purpose
+- The system can now be used by different agencies and has unique features and themes reducing the amount of custom-written code.
 
-### Email Templates Management
+#### Potential Impact
+- The implementation is now more appealing for different agencies, and upkeep cost is reduced due to the reusable nature of the way it's written.
 
-#### Template List
+#### Integration
+- Separating the components that make up UI, and adding a settings section which can target specific components for theming with user input or a predefined selection of themes, or components. This can then be saved in the backend for that specific user or agency, and applied when that specific user logs in.
 
-- Create a page to display a list of current templates stored in the database.
-- Allow users to edit and delete existing templates.
+#### 2
+#### Solution
+- Implement search functionality which allows the user to search up specific templates, and also let the user group the templates into lists for easier access.
 
-#### Template Creation
+#### Purpose
+- The user experience will be improved, the number of templates can now be much greater, and the time spent searching for a particular template is reduced significantly.
 
-- Provide a form to create new templates.
-- The editing interface for creating or modifying a template can be on the same page or a different page, based on your preference.
+#### Potential Impact
+- The template feature can now play a greater role and be more expansive instead of only being used for the most frequently used templates.
 
-#### Report Response
+#### Integration
+- A search bar can be added inside the template component, and this allows the user to match the titles of the templates with a query that searches through all the templates creating a list that has anything that matches. A group tab can be created which stores all the user-created groups and allows the user to add a new template to the specified group, when the user selects the specified group it loads all the templates saved inside this group.  
 
-- **Template Loading:** Load the list of templates from the database via a network call. Note: Reading from a local cache or state variable defeats the purpose of the exercise.
-- **Display Templates:** Display the list of templates for users to select from.
-- **Template Application:** Populate a text box with the selected template's contents. Allow users to complete and personalize their message.
+#### 3
+#### Solution
+- Add role-base access control to the system.
 
-### Bonus Extensions
+#### Purpose
+- Allows the agency to group specific users, and allows only qualified personal the ability to perform sensitive tasks.
 
-- Implement support for rich-text templates using Markdown or HTML.
+#### Potential Impact
+- Heightens the security of the system, reduces the chances for potential bad actors accessing parts of the systems, and allows the agency to meet the necessary legal requirements.
 
-## Technology Stack
-
-You will need to create pages, routes, network endpoints, and data models to complete this task. On the back-end, you can use an in-memory data store if not connecting to a formal database helps reduce complexity.
-
-We have provided a base project in React and Rust to reduce some of the admin overhead. The front-end must be in React, but the back-end can use another framework. We use Rust in-house and all team members will learn to work with it, but recognize learning this for the take-home task is likely out of scope. Choose what you can shine in!
-
-## Product Mapping Section
-
-### Overview
-
-This section assesses your ability to foresee future requirements and scalability needs based on user feedback or potential expansion to more agencies.
-
-### Objectives
-
-#### Identifying Gaps
-
-- Reflect on unaddressed user and/or Rubicon scaling needs beyond the minimum requirements.
-
-#### Solutions and Implementation
-
-- For each gap, propose a solution, its purpose, and potential impact. Briefly discuss its integration within the current codebase. NO CODING required.
+#### Integration
+- Creating administrator settings that let the agency create specific roles and groups. Implementing authentication and autherization so that certain parts of the website and features are not accessible.
 
 #### Scalability and Flexibility
 
-- Considering that other police services might adopt a similar system, describe how your solution can be scalable to cater to slight variations.
+#### 1
+- Having customizable themes and components reduces the amount of custom work being done on the development side. This makes the website more flexible when it comes to catering to the different needs of various agencies.
 
-### Instructions
+#### 2
+- Improving the user experience with search capabilities makes the template feature more appealing and scalable when agencies require a larger variety of templates.
 
-- Identify at least three user requirements as gaps.
-- Discuss adaptability for different police service requirements.
-- Document your findings in a clear manner, either in a README, Word document, or any other format.
+#### 3
+- Role-based access control allows the agencies to configure the security features to their liking without the need for developer intervention.
 
-This exercise is to understand your foresight and ability to think from a product mindset in a concise manner.
 
-## Time Frame
+### Instructions For Running The Project
 
-We estimate that the above sections will take about 10 hours total. To be respectful of your time, complete what you are able to in that time allowance and provide us a brief summary of improvements and extensions that you would like to make given more time.
+#### Clone the repository
 
-Please complete the submission within 5 business days of receiving this email.
+- It should be the same as the currently provided instructions I just changed from rust to flask for my backend
 
-## Sample Project
+1:
+- Clone the repository.
 
-To help speed things up, we have provided a starter project for you to use. The repository is split into frontend and backend sections. At the root is a Docker Compose file that you can use to build and run both the client and server applications.
+git clone https://github.com/ivangolovine/take_home.git
 
-After cloning the repository, simply run `docker compose up -w --build` to get going.
-- The `-w` flag watches for changes in the directories. Your updates should be automatically copied into the containers from your local machine
-- The `--build` flag triggers a fresh build to confirm everything is up to date before the watcher is enabled
 
-### Front-end
+2: 
+- Start the docker.
 
-This starter React application gives you some scaffolding to get started quick. Take a look through the project to see the style of routing, layouts, and network calls. Feel free to customize this base project if you wish, but your primary focus should be the added functionality.
+ docker compose up -w --build 
 
-After the Docker containers are running, you should be able to access the site by visiting http://localhost:8080
 
-### Back-end
+ 3:
+- Go to the localhost.
+http://localhost:8080/list
 
-This starter Rust server provides the basics of a Template database model, standard CRUD functions, and an example route. This foundation should give you a springboard to extend it and create the required calls. 
 
-You are not required to use this code if you are not comfortable using/learning Rust in this time period. Feel free to choose a server framework in another language if it helps you to be successful. There will be no penalties for consideration if you choose a different path.
+4:
+- From the top left drop down menu select Template List.
 
-## Submission Requirements
 
-### Code Repository
+5:
+- Click the Template button inside the blue rectangle bottom left.
 
-- Share a link to your private repository with daniyar@tryrubicon.com, daniel@tryrubicon.com, and alistair@tryrubicon.com, supriya@tryrubicon.com containing all source code, assets, and relevant files for the task.
-- Do NOT make this repository public, as other candidates will receive the same take-home project.
+6:
+- Click on any template to have the title subject line and message be inserted into the input blue email fields.
+- Use The Template button to add a new template, by clicking save it saves it and cancel exists out into the rest of the templates.
+- The X will close the template side bar and so will clicking the templates button inside the blue rectangle container
+- Clicking on the garbage icon inside the blue container clears it.
+- Clicking on the template garbage icon deletes the specific template.
+- Clicking the edit icon next to the garbage icon opens up the the editing option on the template, for edit to take effect click save.
+- The templates will be saved in a templates.json file in the backend.
 
-### Send us an email
+7:
+- Exit using ctrl c
 
-When you are finished, send us an email letting us know your code is ready for review. Please include a link to your repository. You can include any answers for the Product Mapping section in this email or as a file in your repo.
 
-### Hosting (Optional)
-
-- If you've chosen to host the web app, provide the direct link to access it online.
-
-### Documentation
-
-- Include a well-structured README or another documentation file. This should encompass setup and run instructions for local development if any changes have been made to our initial Docker setup.
-
-Your efforts will give us insights into your coding capabilities, design choices, and product mindset. Best of luck!
