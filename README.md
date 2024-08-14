@@ -91,7 +91,7 @@ http://localhost:8080/list
 
 6:
 - Click on any template to have the title subject line and message be inserted into the input blue email fields.
-- Use The Template button to add a new template, by clicking save it saves it and cancel exists out into the rest of the templates.
+- Use The Template button to add a new template, by clicking save it saves it and cancel exits out into the rest of the templates.
 - The X will close the template side bar and so will clicking the templates button inside the blue rectangle container
 - Clicking on the garbage icon inside the blue container clears it.
 - Clicking on the template garbage icon deletes the specific template.
